@@ -2,33 +2,34 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http_equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
       href="https://fonts.googleapis.com/css?family=Armata|Patua+One|Press+Start+2P"
       rel="stylesheet"
     />
-    <script rel="stylesheet" href="main.css" ></script>
+    <link rel="stylesheet" href="style.css"/>
+    <script src='./index.js' defer></script>
     <title>Br*k%n! D$M</title>
   </head>
   <body>
     <h1>Br*k%n! D$M</h1>
     <section>
       <h2>Disemvowel</h2>
-      <input id="name_to_disemvowel" type="number" />
+      <input id="name_to_disemvowel" type="text" />
       <button onclick="disEmvowel()">Disemvowel</button>
-      <p class="disemvowel-string"></p>
+      <p class="disemvowel_string"></p>
     </section>
     <section>
       <h2>Is Palindrome?</h2>
 
-      <input id="is-palindrome-input" type="password" />
-      <button onclick="isPalindrome">Is Palindrome?</button>
-      <p id="is-palindrome-p"></p>
+      <input id="is_palindrome_input" type="text" />
+      <button onclick="isPalindrome()">Is Palindrome?</button>
+      <p id="is_palindrome_p"></p>
     </section>
     <section>
       <h2>Favorite Numbers</h2>
-      <ul id="favorite-numbers">
+      <ul id="favorite_numbers">
         <li>13</li>
         <li>44</li>
         <li>16</li>
@@ -38,32 +39,32 @@
     </section>
     <section>
       <h2>Favorite Number Stats</h2>
-      <p id="sum-of-favorite-nums">Sum:</p>
-      <p id=average-of-favorite-nums>Average:</p>
+      <p id="sum_of_favorite_nums">Sum:</p>
+      <p id=average_of_favorite_nums>Average:</p>
       <h3>Odd Favorites</h3>
-      <ul id="list-of-odd-favorite-nums"></ul>
+      <ul id="list_of_odd_favorite_nums"></ul>
     </section>
 
     <section>
         <h2>Counter</h2>
         <p>Click Count: </p>
-        <p id="click-count">0</p>
+        <p id="click_count">0</p>
         <button id="clicker" onclick="incrementCount()">Click!</button>
         <button id="clicker" onclick="incrementCount()">RESET!</button>
     </section>
 
     <section>
         <h2>Shopping List</h2>
-        <input type="text" value="What should I buy?" placeholder="What should I buy?" id="add-item"/>
+        <input type="text" value="What should I buy?" placeholder="What should I buy?" id="add_item"/>
         <button onclick="addItem()">Add Item</button>
-        <ul class="shopping-list">
+        <ul class="shopping_list">
 
         </ul>
     </section>
 
-    <section id="kill-selector">
-        <h2 id="kill-button-header">Kill the button</h2>
-        <button id="kill-button" onclick="killButton()">Button</button>
+    <section id="kill_selector">
+        <h2 id="kill_button_header">Kill the button</h2>
+        <button id="kill_button" onclick="killButton()">Button</button>
     </section>
   </body>
 </html>

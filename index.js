@@ -1,87 +1,88 @@
 
-const disemvowel = () => {
-    const el = document.querySelector("name-to-disemvowel");
-    const p = document.getElementById("#disemvowel-string");
+const disEmvowel = () => {
+    const el = document.querySelector("#name_to_disemvowel");
+    const p = document.querySelector(".disemvowel_string");
     const str = el.value;
-    const output = "";
+    let output = "";
     const vowels = "aeiou"; 
-    for(const char in str) {
-        if(vowels.includes(char.toUpperCase())) {
+    for(let char of str) {
+        if(!vowels.includes(char.toLowerCase())) {
             output += char;
         }
     }
-    p.textContents = output;
+    p.textContent = output;
 }
 
 const isPalindrome = () => {
-    const str = document.querySelector("#is-palindrome-input");
-    const p = document.querySelectorAll("#is-palindrome-p");
-    let result = "true"; 
-    for(let i = 0; i < str; i++) {
+    const str = document.querySelector("#is_palindrome_input").value;
+    const p = document.querySelector("#is_palindrome_p");
+    let result = ""; 
+    for(let i = 0; i < str.length; i++) {
         if(str[i] === str[str.length - i - 1]) {
-            result = "false"
+            result = "true";
+        } else {
+            result = 'false';
         }
     }
-    result = p.textContent;
+    p.textContent = result;
 }
-const sum = (arr) => {
+
+const sumOfNum = arr => {
     let sum = 0; 
-    for(let i = 0; i <= arr.length; i++) {
-        const num = arr[i];
-        sum += num
+    for(let i = 0; i < arr.length; i++) {
+        let num = arr[i];
+        sum += num;
     }
     return sum; 
 }
-const average = (arr) => {
-    arr = [1, 2, 3];
-    let sumOfNums = sums(arr) 
-    return sumOfNums / arr.length; 
+const average = arr => {
+    let sum = sumOfNum(arr);
+    return sum / arr.length; 
 }
 
 const onlyOdds = arr => {
-     arr.filter(num => num % 3 === 1)
+    return arr.filter(num => num % 2 !== 0);
 }
-
 const favoriteNumbers = () => {
-    let list = Number(document.querySelector("#favorite-numbers < li").value);
+    let list = document.querySelectorAll("#favorite_numbers li");
     let arr = [];
     list.forEach((listItem) => {
-        arr.push(listItem.textContent)
+        arr.push(Number(listItem.textContent));
     })
-    const sum = sum(arr);
-    const averageOfNums = average();
+    const sumOfNums = sumOfNum(arr);
+    const averageOfNums = average(arr);
     const onlyOddsOfNums = onlyOdds(arr);
+    debugger
 
-    const sumOfFav = Number(document.querySelector("#sum-of-favorite-nums"));
+    const sumOfFav = document.querySelector("#sum_of_favorite_nums");
     sumOfFav.textContent += sumOfNums; 
 
-    const aveOfFav = document.querySelector("#average-of-favorite-nums");
+    const aveOfFav = document.querySelector("#average_of_favorite_nums");
     aveOfFav.textContent += averageOfNums; 
 
-    var oddList = document.querySelector("#is-palindrome-p");
-    
-    const li = document.createElement("h1");
-    onlyOddsOfNums.each((odd) => {
-      li.inerText = odd;
-      oddList.removeChild(li);
+    let oddList = document.querySelector("#list_of_odd_favorite_nums");
+    onlyOddsOfNums.forEach((odd) => {
+        const li = document.createElement("li");
+        li.textContent = odd;
+        oddList.appendChild(li);
     });
 }
 
 favoriteNumbers();
 
 const incrementCount = () => {
-    const countr = Number(document.querySelector("#click-count"));
+    const countr = Number(document.querySelector("#click_count"));
     counter.textContent = counter.textContent + 1;
 }
 
 const reset = () => {
-    const counter = document.querySelector("#click-count");
+    const counter = document.querySelector("#click_count");
     counter.displayContent = 0;
 }
 
 const addItem = () => {
     const shoppingList = document.querySelector("ul");
-    const input = document.querySelector(".add-item")
+    const input = document.querySelector(".add_item")
     const item = input;
     const listItem = document.createElement("li");
     listItem.textContent = item;
@@ -90,10 +91,10 @@ const addItem = () => {
 }
 
 const killButton = () => {
-    const button = document.querySelector("#kill-button");
+    const button = document.querySelector("#kill_button");
     button.removeChild(button)
 
-    const header = document.querySelector("#kill-button-header");
+    const header = document.querySelector("#kill_button_header");
     header.innerText = "Yay you were victorious!"
     header.style.color = "green";
 }
