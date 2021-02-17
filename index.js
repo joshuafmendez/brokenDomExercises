@@ -30,7 +30,7 @@ const isPalindrome = () => {
 const sumOfNum = arr => {
     let sum = 0; 
     for(let i = 0; i < arr.length; i++) {
-        let num = arr[i];
+        const num = arr[i];
         sum += num;
     }
     return sum; 
@@ -44,7 +44,7 @@ const onlyOdds = arr => {
     return arr.filter(num => num % 2 !== 0);
 }
 const favoriteNumbers = () => {
-    let list = document.querySelectorAll("#favorite_numbers li");
+    let list = document.querySelectorAll("#favorite_numbers > li");
     let arr = [];
     list.forEach((listItem) => {
         arr.push(Number(listItem.textContent));
@@ -80,11 +80,12 @@ const reset = () => {
 
 const addItem = () => {
     const shoppingList = document.querySelector(".shopping_list");
-    const input = document.querySelector("#add_item")
+    const input = document.querySelector("#add_item");
     const item = input.value;
     const listItem = document.createElement("li");
     listItem.textContent = item;
     shoppingList.appendChild(listItem);
+    input.value = '';
 }
 
 const killButton = () => {
