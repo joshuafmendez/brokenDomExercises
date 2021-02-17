@@ -1,5 +1,5 @@
 
-const disEmvowel = () => {
+const disemvowel = () => {
     const el = document.querySelector("#name_to_disemvowel");
     const p = document.querySelector(".disemvowel_string");
     const str = el.value;
@@ -52,7 +52,6 @@ const favoriteNumbers = () => {
     const sumOfNums = sumOfNum(arr);
     const averageOfNums = average(arr);
     const onlyOddsOfNums = onlyOdds(arr);
-    debugger
 
     const sumOfFav = document.querySelector("#sum_of_favorite_nums");
     sumOfFav.textContent += sumOfNums; 
@@ -67,34 +66,32 @@ const favoriteNumbers = () => {
         oddList.appendChild(li);
     });
 }
-
 favoriteNumbers();
 
 const incrementCount = () => {
-    const countr = Number(document.querySelector("#click_count"));
-    counter.textContent = counter.textContent + 1;
+    const counter = document.querySelector("#click_count");
+    counter.textContent = Number(counter.textContent) + 1;
 }
 
 const reset = () => {
     const counter = document.querySelector("#click_count");
-    counter.displayContent = 0;
+    counter.textContent = 0;
 }
 
 const addItem = () => {
-    const shoppingList = document.querySelector("ul");
-    const input = document.querySelector(".add_item")
-    const item = input;
+    const shoppingList = document.querySelector(".shopping_list");
+    const input = document.querySelector("#add_item")
+    const item = input.value;
     const listItem = document.createElement("li");
     listItem.textContent = item;
-    shoppingList.appendChild(listItem)
-    input.value = "Empty";
+    shoppingList.appendChild(listItem);
 }
 
 const killButton = () => {
     const button = document.querySelector("#kill_button");
-    button.removeChild(button)
+    button.parentNode.removeChild(button);
 
     const header = document.querySelector("#kill_button_header");
-    header.innerText = "Yay you were victorious!"
+    header.textContent = "Yay you were victorious!"
     header.style.color = "green";
 }
